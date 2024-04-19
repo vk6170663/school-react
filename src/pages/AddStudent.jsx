@@ -1,4 +1,4 @@
-import PersonalInfo from "../components/PersonalInfo";
+import PersonalInfo from "../components/PersonalInfoTab";
 
 export default function AddStudent() {
   return (
@@ -11,7 +11,7 @@ export default function AddStudent() {
           </button>
         </div>
         <div className="flex lg:flex-row flex-col items-center justify-between pb-5 border-b-2 mb-11">
-          <ul className="flex items-center gap-5 flex-wrap order-last lg:order-first mt-5">
+          <ul className="flex items-center gap-5 flex-wrap order-last lg:order-first ">
             <li className="bg-gray-300 rounded-lg uppercase text-xs font-medium text-gray-700 px-4 py-3">
               <a href="#">Personal Info</a>
             </li>
