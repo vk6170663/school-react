@@ -12,7 +12,7 @@ export default function MedicalInfo() {
       <h3 className={headingTertiary}>MEDICAL RECORD</h3>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
         <div className={labelDiv}>
-          <Label labelText={"Blood Group"} />
+          <Label>Blood Group</Label>
           <select className={selectBorder}>
             <option value="">Blood Group</option>
             <option value="">A+</option>
@@ -20,7 +20,7 @@ export default function MedicalInfo() {
           </select>
         </div>
         <div className={labelDiv}>
-          <Label labelText={"CATEGORY"} />
+          <Label>CATEGORY</Label>
 
           <select className={selectBorder}>
             <option value="">Category</option>
@@ -29,11 +29,11 @@ export default function MedicalInfo() {
           </select>
         </div>
         <div className={labelDiv}>
-          <Label labelText={"Height (CM)"} />
+          <Label>Height (CM)</Label>
           <Input type={"number"} placeholder={"Enter Height"} />
         </div>
         <div className={labelDiv}>
-          <Label labelText={"Weight (KG)"} />
+          <Label>Weight (KG)</Label>
           <Input type={"number"} placeholder={"Enter Weight"} />
         </div>
       </div>

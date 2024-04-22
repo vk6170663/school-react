@@ -2,6 +2,7 @@ import { useState } from "react";
 import PersonalInfo from "../components/personalInfo/PersonalInfoTab";
 import { headingTertiary, labelDiv } from "../ui/AddStudentStyle";
 import ParentInfo from "../components/parentsInfo/ParentsInfo";
+import DocumentInfo from "../components/documentInfo/DocumentInfo";
 
 const studentTabs = [
   "Personal Info",
@@ -52,6 +53,7 @@ export default function AddStudent() {
         </div>
         {activeTab === studentTabs[0] && <PersonalInfo />}
         {activeTab === studentTabs[1] && <ParentInfo />}
+        {activeTab === studentTabs[2] && <DocumentInfo />}
       </form>
     </main>
   );

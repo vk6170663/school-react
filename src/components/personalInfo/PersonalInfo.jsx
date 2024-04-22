@@ -12,15 +12,15 @@ export default function PersonalInfo() {
       <h3 className={headingTertiary}>PERSONAL INFO</h3>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
         <div className={labelDiv}>
-          <Label labelText={"First Name"} />
+          <Label>First Name</Label>
           <Input type={"text"} placeholder={"Enter First Name"} />
         </div>
         <div className={labelDiv}>
-          <Label labelText={"Last Name"} />
+          <Label>Last Name</Label>
           <Input type={"text"} placeholder={"Enter Last Name"} />
         </div>
         <div className={labelDiv}>
-          <Label labelText={"Gender"} />
+          <Label>Gender</Label>
           <select className={selectBorder}>
             <option value="">Gender</option>
             <option value="">Female</option>
@@ -28,11 +28,11 @@ export default function PersonalInfo() {
           </select>
         </div>
         <div className={labelDiv}>
-          <Label labelText={"DOB"} />
+          <Label>DOB</Label>
           <Input type={"date"} />
         </div>
         <div className={labelDiv}>
-          <Label labelText={"Religion"} />
+          <Label>Religion</Label>
           <select className={selectBorder}>
             <option value="">Religion</option>
             <option value="">Hindu</option>
@@ -43,11 +43,11 @@ export default function PersonalInfo() {
         </div>
 
         <div className={labelDiv}>
-          <Label labelText={"Caste"} />
+          <Label>Caste</Label>
           <Input type={"text"} placeholder={"Enter Caste"} />
         </div>
         <div className={labelDiv}>
-          <Label labelText={"Student Photo"} />
+          <Label>Student Photo</Label>
           <Input type={"file"} />
         </div>
       </div>

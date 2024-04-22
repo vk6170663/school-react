@@ -12,14 +12,14 @@ export default function AcademicInfo() {
       <h3 className={headingTertiary}>ACADEMIC INFORMATION</h3>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
         <div className={labelDiv}>
-          <Label labelText={"Acedmic Year"} />
+          <Label>Acedmic Year</Label>
           <select className={selectBorder}>
             <option value="">Acedmic year</option>
             <option value="">2024 [Jan-Dec]</option>
           </select>
         </div>
         <div className={labelDiv}>
-          <Label labelText={"Class Name"} />
+          <Label>Class Name</Label>
           <select className={selectBorder}>
             <option value="">className</option>
             <option value="">1</option>
@@ -30,7 +30,7 @@ export default function AcademicInfo() {
           </select>
         </div>
         <div className={labelDiv}>
-          <Label labelText={"Section"} />
+          <Label>Section</Label>
           <select className={selectBorder}>
             <option value="">Section</option>
             <option value="">A</option>
@@ -38,15 +38,15 @@ export default function AcademicInfo() {
           </select>
         </div>
         <div className={labelDiv}>
-          <Label labelText={"Admission Number"} />
+          <Label>Admission Number</Label>
           <Input type={"number"} placeholder={"Enter Admission Number"} />
         </div>
         <div className={labelDiv}>
-          <Label labelText={"Admission Date"} />
+          <Label>Admission Date</Label>
           <Input type={"date"} />
         </div>
         <div className={labelDiv}>
-          <Label labelText={"Roll Number"} />
+          <Label>Roll Number</Label>
           <Input type={"number"} placeholder={"Enter Roll Number"} />
         </div>
       </div>
