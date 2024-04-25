@@ -3,6 +3,8 @@ import PersonalInfo from "../components/personalInfo/PersonalInfoTab";
 import { headingTertiary, labelDiv } from "../ui/AddStudentStyle";
 import ParentInfo from "../components/parentsInfo/ParentsInfo";
 import DocumentInfo from "../components/documentInfo/DocumentInfo";
+import PreviousSchool from "../components/previousSchool/PreviousSchool";
+import OtherInfo from "../components/otherInfo/OtherInfo";
 
 const studentTabs = [
   "Personal Info",
@@ -31,7 +33,7 @@ export default function AddStudent() {
           </button>
         </div>
         <div className="flex lg:flex-row flex-col items-center justify-between pb-5 border-b-2 mb-11">
-          <ul className="flex items-center gap-5 flex-wrap order-last lg:order-first ">
+          <ul className="flex items-center gap-5 flex-wrap order-last lg:order-first mt-5">
             {studentTabs.map((tab, i) => (
               <li
                 onClick={() => handleClick(tab)}
@@ -54,6 +56,8 @@ export default function AddStudent() {
         {activeTab === studentTabs[0] && <PersonalInfo />}
         {activeTab === studentTabs[1] && <ParentInfo />}
         {activeTab === studentTabs[2] && <DocumentInfo />}
+        {activeTab === studentTabs[3] && <PreviousSchool />}
+        {activeTab === studentTabs[4] && <OtherInfo />}
       </form>
     </main>
   );

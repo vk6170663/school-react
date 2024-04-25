@@ -8,8 +8,8 @@ import Label from "../../ui/Label";
 
 export default function PersonalInfo() {
   return (
-    <div>
-      <h3 className={headingTertiary}>PERSONAL INFO</h3>
+    <div className="px-3 sm:px-8">
+      <h3 className={headingTertiary}>Personal Info</h3>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
         <div className={labelDiv}>
           <Label>First Name</Label>

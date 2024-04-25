@@ -6,7 +6,7 @@ export default function GuardianInfo() {
   return (
     <div className="px-8">
       <h3 className={headingTertiary}>Guardian Info</h3>
-      <div className="grid grid-cols-2 gap-x-8 pt-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
         <div className={labelDiv}>
           <Label>Guardian Name</Label>
           <Input type={"text"} placeholder={"Guardians Name"} />
@@ -32,10 +32,10 @@ export default function GuardianInfo() {
           <Label>Guardian Occupation</Label>
           <Input type={"text"} placeholder={"Guardian Occupation"} />
         </div>
-        <div class="flex flex-col col-span-full mb-5">
+        <div className="flex flex-col col-span-full mb-5">
           <Label>Guardian Address</Label>
           <textarea
-            class="border border-gray-400 px-5 py-3 text-gray-400 text-sm"
+            className="border border-gray-400 px-5 py-3 text-gray-400 text-sm"
             name=""
             id=""
             rows="2"

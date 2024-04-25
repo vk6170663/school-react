@@ -5,7 +5,7 @@ import Label from "../../ui/Label";
 export default function ContactInfo() {
   return (
     <div className="px-3 sm:px-8">
-      <h3 className={headingTertiary}>CONTACT INFORMATION</h3>
+      <h3 className={headingTertiary}>Contact Information</h3>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
         <div className={labelDiv}>
           <Label>Email Address</Label>
@@ -16,11 +16,10 @@ export default function ContactInfo() {
           <Input type={"tel"} placeholder={"Enter Phone Number"} />
         </div>
         <div className="col-span-full mb-5">
-          <h3 className={headingTertiary}>STUDENT ADDRESS INFO</h3>
+          <h3 className={headingTertiary}>Student Address Info</h3>
         </div>
         <div className={labelDiv}>
-          <Label>CURRENT ADDRESS</Label>
-
+          <Label>Current Address</Label>
           <textarea
             className="border border-gray-400 px-5 py-3 text-gray-400 text-sm"
             name=""
@@ -29,7 +28,7 @@ export default function ContactInfo() {
           ></textarea>
         </div>
         <div className={labelDiv}>
-          <Label>PERMANENT ADDRESS</Label>
+          <Label>Permanent Address</Label>
           <textarea
             className="border border-gray-400 px-5 py-3 text-gray-400 text-sm"
             name=""
