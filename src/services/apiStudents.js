@@ -10,3 +10,14 @@ export async function getStudents() {
 
   return data;
 }
+
+export async function deleteStudent(id) {
+  const { data, error } = await supabase.from("student").delete().eq("id", id);
+
+  if (error) {
+    console.error(error);
+    throw new Error("Student could not be deleted");
+  }
+
+  return data;
+}

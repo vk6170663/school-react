@@ -1,6 +1,6 @@
-import { headingTertiary, labelDiv } from "../../ui/AddStudentStyle";
-import Input from "../../ui/Input";
-import Label from "../../ui/Label";
+import { headingTertiary, labelDiv } from "../../../ui/AddStudentStyle";
+import Input from "../../../ui/Input";
+import Label from "../../../ui/Label";
 import BankInfo from "./BankInfo";
 import DocAttachment from "./DocAttachment";
 
@@ -11,19 +11,28 @@ export default function () {
         <h3 className={headingTertiary}>Document Info</h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
           <div className={labelDiv}>
-            <Label>National Id Card</Label>
-            <Input type={"text"} placeholder={"National Id Card "} />
+            <Label htmlFor={"nationalIdCard"}>National Id Card</Label>
+            <Input
+              type={"text"}
+              placeholder={"National Id Card "}
+              id={"nationalIdCard"}
+            />
           </div>
           <div className={labelDiv}>
-            <Label>Birth Certificate No.</Label>
-            <Input type={"text"} placeholder={"Birth Certificate No."} />
+            <Label htmlFor={"birthCertificateNo"}>Birth Certificate No.</Label>
+            <Input
+              type={"text"}
+              placeholder={"Birth Certificate No."}
+              id={"birthCertificateNo"}
+            />
           </div>
           <div className={`${labelDiv} col-span-full`}>
-            <Label>Additional Notes</Label>
+            <Label htmlFor={"additionalNotes"}>Additional Notes</Label>
             <textarea
               className="border border-gray-400 px-5 py-3 text-gray-400 text-sm"
               rows="2"
-            ></textarea>
+              id={"additionalNotes"}
+            />
           </div>
         </div>
       </div>

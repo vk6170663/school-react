@@ -44,7 +44,7 @@ export default function StudentTable() {
     <Table role="table">
       <TableHeader role="row">
         <div>Image</div>
-        <div>Student</div>
+        <div>Student Name</div>
         <div>Admission Date</div>
         <div>Class</div>
         <div>Section</div>

@@ -1,4 +1,7 @@
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import styled from "styled-components";
+import { deleteStudent } from "../../services/apiStudents";
+import toast from "react-hot-toast";
 
 const TableRow = styled.div`
   display: grid;
@@ -40,8 +43,28 @@ const Discount = styled.div`
 `;
 
 export default function StudentRow({ student }) {
-  const { firstName, className, section, studentImage, admissionDate } =
-    student;
+  const {
+    id: studentId,
+    firstName,
+    className,
+    section,
+    studentImage,
+    admissionDate,
+  } = student;
+
+  const queryClient = useQueryClient();
+
+  const { isLoading: isDeleting, mutate } = useMutation({
+    mutationFn: deleteStudent,
+    onSuccess: () => {
+      toast.success("Student successfully deleted");
+
+      queryClient.invalidateQueries({
+        queryKey: ["student"],
+      });
+    },
+    onError: (err) => toast.error(err.message),
+  });
 
   return (
     <TableRow role="row">
@@ -50,6 +73,9 @@ export default function StudentRow({ student }) {
       <div>{admissionDate}</div>
       <Price>{className}</Price>
       <Discount>{section}</Discount>
+      <button onClick={() => mutate(studentId)} disabled={isDeleting}>
+        Delete
+      </button>
     </TableRow>
   );
 }

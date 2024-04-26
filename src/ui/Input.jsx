@@ -1,6 +1,6 @@
 let style = "";
 
-export default function Input({ type, placeholder }) {
+export default function Input({ type, placeholder, id }) {
   switch (type) {
     case "file":
       style = "border border-gray-400 px-5 py-2.5 text-gray-700  text-sm";
@@ -10,5 +10,7 @@ export default function Input({ type, placeholder }) {
       style = "border border-gray-400 px-5 py-3 text-gray-700  text-sm";
       break;
   }
-  return <input className={style} type={type} placeholder={placeholder} />;
+  return (
+    <input className={style} type={type} placeholder={placeholder} id={id} />
+  );
 }
