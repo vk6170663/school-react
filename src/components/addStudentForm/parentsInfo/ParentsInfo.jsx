@@ -1,5 +1,6 @@
+import { FaRegGrinSquintTears } from "react-icons/fa";
 import { headingTertiary, labelDiv } from "../../../ui/AddStudentStyle";
-import Input from "../../../ui/Input";
+
 import Label from "../../../ui/Label";
 import GuardianInfo from "./GuardianInfo";
 
@@ -11,8 +12,9 @@ export default function ParentInfo({ register }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
           <div className={labelDiv}>
             <Label htmlFor={"fatherName"}>Father Name</Label>
-            <Input
-              type={"text"}
+            <input
+              className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
+              type="text"
               placeholder={"Enter Father Name"}
               id={"fatherName"}
               {...register("fatherName")}
@@ -20,51 +22,71 @@ export default function ParentInfo({ register }) {
           </div>
           <div className={labelDiv}>
             <Label htmlFor={"fatherOccupation"}>Father Occupation</Label>
-            <Input
-              type={"text"}
+            <input
+              className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
+              type="text"
               placeholder={"Enter Occupation"}
               id={"fatherOccupation"}
+              {...register("fatherOccupation")}
             />
           </div>
           <div className={labelDiv}>
             <Label htmlFor={"fatherPhoneNo"}>Father Phone No.</Label>
-            <Input
+            <input
+              className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
               type={"tel"}
               placeholder={"Father Phone No."}
               id={"fatherPhoneNo"}
+              {...register("fatherPhoneNo")}
             />
           </div>
           <div className={labelDiv}>
             <Label htmlFor={"fatherPhoto"}>Father Photo</Label>
-            <Input type={"file"} id={"fatherPhoto"} />
+            <input
+              className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
+              type="file"
+              id={"fatherPhoto"}
+              {...register("fatherPhoto")}
+            />
           </div>
           <div className={labelDiv}>
             <Label htmlFor={"motherName"}>Mother Name</Label>
-            <Input
-              type={"text"}
+            <input
+              className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
+              type="text"
               placeholder={"Mother Name"}
               id={"motherName"}
+              {...register("motherName")}
             />
           </div>
           <div className={labelDiv}>
             <Label htmlFor={"motherOccupation"}>Mother Occupation</Label>
-            <Input
-              type={"text"}
+            <input
+              className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
+              type="text"
               placeholder={"Mother Occupation"}
               id={"motherOccupation"}
+              {...register("motherOccupation")}
             />
           </div>
           <div className={labelDiv}>
             <Label htmlFor={"motherPhone"}>Mother Phone No.</Label>
-            <Input
+            <input
+              className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
               type={"tel"}
               placeholder={"Mother Phone No."}
               id={"motherPhone"}
+              {...register("motherPhone")}
             />
           </div>
           <div className={labelDiv}>
             <Label htmlFor={"motherPhoto"}>Mother Photo</Label>
-            <Input type={"file"} id={"motherPhoto"} />
+            <input
+              className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
+              type="file"
+              id={"motherPhoto"}
+              {...register("motherPhoto")}
+            />
           </div>
         </div>
       </div>

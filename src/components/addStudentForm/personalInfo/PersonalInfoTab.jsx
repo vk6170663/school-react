@@ -7,9 +7,9 @@ export default function PersonalInfoTab({ register }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">
       <AcademicInfo register={register} />
-      <PersonalInfo register />
-      <ContactInfo register />
-      <MedicalInfo register />
+      <PersonalInfo register={register} />
+      <ContactInfo register={register} />
+      <MedicalInfo register={register} />
     </div>
   );
 }

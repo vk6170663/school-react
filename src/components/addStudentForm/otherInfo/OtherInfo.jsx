@@ -3,7 +3,7 @@ import {
   labelDiv,
   selectBorder,
 } from "../../../ui/AddStudentStyle";
-import Input from "../../../ui/Input";
+
 import Label from "../../../ui/Label";
 
 export default function OtherInfo() {
