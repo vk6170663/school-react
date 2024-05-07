@@ -1,4 +1,3 @@
-import { BiRegistered } from "react-icons/bi";
 import {
   headingTertiary,
   labelDiv,

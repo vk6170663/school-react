@@ -14,7 +14,7 @@ export default function GuardianInfo({ register }) {
             type="text"
             placeholder={"Guardians Name"}
             id={"guardianName"}
-            {...register("")}
+            {...register("guardianName")}
           />
         </div>
         <div className={labelDiv}>

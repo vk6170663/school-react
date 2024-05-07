@@ -6,7 +6,7 @@ import {
 
 import Label from "../../../ui/Label";
 
-export default function OtherInfo() {
+export default function OtherInfo({ register }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 pb-24">
       <div className="px-3 sm:px-8">
@@ -14,14 +14,22 @@ export default function OtherInfo() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
           <div className={labelDiv}>
             <Label htmlFor={"routeList"}>Route List</Label>
-            <select className={selectBorder} id={"routeList"}>
+            <select
+              className={selectBorder}
+              id={"routeList"}
+              {...register("routeList")}
+            >
               <option value="">Route List</option>
               <option value="">Jalandhar-Nakodar</option>
             </select>
           </div>
           <div className={labelDiv}>
             <Label htmlFor={"vehicleNumber"}>Vehicle Number</Label>
-            <select className={selectBorder} id={"vehicleNumber"}>
+            <select
+              className={selectBorder}
+              id={"vehicleNumber"}
+              {...register("vehicleNumber")}
+            >
               <option value="">Vehicle Number</option>
               <option value="">143643</option>
               <option value="">464362</option>
@@ -37,14 +45,22 @@ export default function OtherInfo() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
           <div className={labelDiv}>
             <Label htmlFor={"dormitory"}>Dormitory</Label>
-            <select className={selectBorder} id={"dormitory"}>
+            <select
+              className={selectBorder}
+              id={"dormitory"}
+              {...register("dormitory")}
+            >
               <option value="">Dormitory Name</option>
               <option value="">Sir Isaac Newton Hotel</option>
             </select>
           </div>
           <div className={labelDiv}>
             <Label htmlFor={"roomNumber"}>Room Number</Label>
-            <select className={selectBorder} id={"roomNumber"}>
+            <select
+              className={selectBorder}
+              id={"roomNumber"}
+              {...register("roomNumber")}
+            >
               <option value="">Room Number</option>
               <option value="">1</option>
               <option value="">2</option>

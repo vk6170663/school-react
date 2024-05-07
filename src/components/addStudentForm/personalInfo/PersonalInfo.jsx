@@ -14,6 +14,7 @@ export default function PersonalInfo({ register }) {
         <div className={labelDiv}>
           <Label htmlFor={"firstName"}>First Name</Label>
           <input
+            className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
             type="text"
             placeholder={"Enter First Name"}
             id={"firstName"}
@@ -44,7 +45,12 @@ export default function PersonalInfo({ register }) {
         </div>
         <div className={labelDiv}>
           <Label htmlFor={"dob"}>DOB</Label>
-          <input type={"date"} id={"dob"} {...register("dob")} />
+          <input
+            className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
+            type={"date"}
+            id={"dob"}
+            {...register("dob")}
+          />
         </div>
         <div className={labelDiv}>
           <Label htmlFor={"religion"}>Religion</Label>

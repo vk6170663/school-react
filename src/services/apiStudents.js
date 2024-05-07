@@ -16,6 +16,7 @@ export async function createEditStudent(newStudent, id) {
   const imageName = `${Math.random()}-${
     newStudent.studentPhoto.name
   }`.replaceAll("/", "");
+
   const imagePath = hasImagePath
     ? newStudent.studentPhoto
     : `${supabaseUrl}/storage/v1/object/public/student-images/${imageName}`;
@@ -24,11 +25,13 @@ export async function createEditStudent(newStudent, id) {
   let query = supabase.from("student");
 
   // A) CREATE
-  if (!id) query = query.insert([{ ...newStudent, image: imagePath }]);
+  if (!id) query = query.insert([{ ...newStudent, studentPhoto: imagePath }]);
 
   // B) EDIT
   if (id)
-    query = query.update({ ...newStudent, image: imagePath }).eq("id", id);
+    query = query
+      .update({ ...newStudent, studentPhoto: imagePath })
+      .eq("id", id);
 
   const { data, error } = await query.select().single();
 

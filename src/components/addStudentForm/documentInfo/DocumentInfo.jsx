@@ -4,7 +4,7 @@ import Label from "../../../ui/Label";
 import BankInfo from "./BankInfo";
 import DocAttachment from "./DocAttachment";
 
-export default function ({ register }) {
+export default function DocumentInfo({ register }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">
       <div className="px-3 sm:px-8">
@@ -41,8 +41,8 @@ export default function ({ register }) {
           </div>
         </div>
       </div>
-      <BankInfo />
-      <DocAttachment />
+      <BankInfo register={register} />
+      <DocAttachment register={register} />
     </div>
   );
 }

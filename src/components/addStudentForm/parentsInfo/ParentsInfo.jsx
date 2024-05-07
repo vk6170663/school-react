@@ -1,6 +1,4 @@
-import { FaRegGrinSquintTears } from "react-icons/fa";
 import { headingTertiary, labelDiv } from "../../../ui/AddStudentStyle";
-
 import Label from "../../../ui/Label";
 import GuardianInfo from "./GuardianInfo";
 
@@ -14,7 +12,7 @@ export default function ParentInfo({ register }) {
             <Label htmlFor={"fatherName"}>Father Name</Label>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
-              type="text"
+              type={"text"}
               placeholder={"Enter Father Name"}
               id={"fatherName"}
               {...register("fatherName")}
@@ -24,7 +22,7 @@ export default function ParentInfo({ register }) {
             <Label htmlFor={"fatherOccupation"}>Father Occupation</Label>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
-              type="text"
+              type={"text"}
               placeholder={"Enter Occupation"}
               id={"fatherOccupation"}
               {...register("fatherOccupation")}
@@ -44,7 +42,7 @@ export default function ParentInfo({ register }) {
             <Label htmlFor={"fatherPhoto"}>Father Photo</Label>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
-              type="file"
+              type={"file"}
               id={"fatherPhoto"}
               {...register("fatherPhoto")}
             />
@@ -53,7 +51,7 @@ export default function ParentInfo({ register }) {
             <Label htmlFor={"motherName"}>Mother Name</Label>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
-              type="text"
+              type={"text"}
               placeholder={"Mother Name"}
               id={"motherName"}
               {...register("motherName")}
@@ -63,7 +61,7 @@ export default function ParentInfo({ register }) {
             <Label htmlFor={"motherOccupation"}>Mother Occupation</Label>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
-              type="text"
+              type={"text"}
               placeholder={"Mother Occupation"}
               id={"motherOccupation"}
               {...register("motherOccupation")}
@@ -83,14 +81,14 @@ export default function ParentInfo({ register }) {
             <Label htmlFor={"motherPhoto"}>Mother Photo</Label>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
-              type="file"
+              type={"file"}
               id={"motherPhoto"}
               {...register("motherPhoto")}
             />
           </div>
         </div>
       </div>
-      <GuardianInfo />
+      <GuardianInfo register={register} />
     </div>
   );
 }

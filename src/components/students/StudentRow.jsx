@@ -1,7 +1,11 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import toast from "react-hot-toast";
+
 import styled from "styled-components";
 import { deleteStudent } from "../../services/apiStudents";
-import toast from "react-hot-toast";
+import AddStudent from "../../pages/AddStudent";
+
+import { useState } from "react";
 
 const TableRow = styled.div`
   display: grid;
@@ -43,6 +47,8 @@ const Discount = styled.div`
 `;
 
 export default function StudentRow({ student }) {
+  const [showForm, setShowForm] = useState(false);
+
   const {
     id: studentId,
     firstName,
@@ -67,15 +73,20 @@ export default function StudentRow({ student }) {
   });
 
   return (
-    <TableRow role="row">
-      <Img src={studentImage} />
-      <Cabin>{firstName}</Cabin>
-      <div>{admissionDate}</div>
-      <Price>{className}</Price>
-      <Discount>{section}</Discount>
-      <button onClick={() => mutate(studentId)} disabled={isDeleting}>
-        Delete
-      </button>
-    </TableRow>
+    <>
+      <TableRow role="row">
+        <Img src={studentImage} />
+        <Cabin>{firstName}</Cabin>
+        <div>{admissionDate}</div>
+        <Price>{className}</Price>
+        <Discount>{section}</Discount>
+        <button onClick={() => setShowForm((show) => !show)}>Edit</button>
+        <button onClick={() => mutate(studentId)} disabled={isDeleting}>
+          Delete
+        </button>
+      </TableRow>
+
+      {showForm && <AddStudent studentToEdit={student} />}
+    </>
   );
 }

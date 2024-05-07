@@ -1,12 +1,18 @@
-import { useState } from "react";
-import PersonalInfo from "../components/addStudentForm/personalInfo/PersonalInfoTab";
-import { headingTertiary, labelDiv } from "../ui/AddStudentStyle";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+
+import { headingTertiary } from "../ui/AddStudentStyle";
+
 import ParentInfo from "../components/addStudentForm/parentsInfo/ParentsInfo";
 import DocumentInfo from "../components/addStudentForm/documentInfo/DocumentInfo";
 import PreviousSchool from "../components/addStudentForm/previousSchool/PreviousSchool";
 import OtherInfo from "../components/addStudentForm/otherInfo/OtherInfo";
-import { useForm } from "react-hook-form";
 import PersonalInfoTab from "../components/addStudentForm/personalInfo/PersonalInfoTab";
+
+import { createEditStudent } from "../services/apiStudents";
+
+import { useState } from "react";
 
 const studentTabs = [
   "Personal Info",
@@ -16,11 +22,27 @@ const studentTabs = [
   "Other Info",
 ];
 
-const activetab = "bg-gray-300 rounded-lg";
+export default function AddStudent({ studentToEdit = {} }) {
+  const { id: editId, ...editValues } = studentToEdit;
+  const isEditSession = Boolean(editId);
 
-export default function AddStudent() {
   const [activeTab, setActiveTab] = useState(studentTabs[0]);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm({
+    defaultValues: isEditSession ? editValues : {},
+  });
+
+  const queryClient = useQueryClient();
+
+  const { mutate, isLoading: isCreating } = useMutation({
+    mutationFn: createEditStudent,
+    onSuccess: () => {
+      toast.success("New student successfully created");
+      queryClient.invalidateQueries({
+        queryKey: ["student"],
+      });
+    },
+    onError: (err) => toast.error(err.message),
+  });
 
   function handleClick(tab) {
     setActiveTab(tab);
@@ -28,6 +50,8 @@ export default function AddStudent() {
 
   function onSubmit(data) {
     console.log(data);
+
+    // mutate({...data, image: data.studentPhoto[0]})
   }
 
   return (
@@ -56,8 +80,11 @@ export default function AddStudent() {
             ))}
           </ul>
 
-          <button className="bg-indigo-700 text-slate-50 font-semibold py-2 px-4 rounded-lg ">
-            Save Student
+          <button
+            disabled={isCreating}
+            className="bg-indigo-700 text-slate-50 font-semibold py-2 px-4 rounded-lg "
+          >
+            {isEditSession ? "Edit Student" : "Save Student"}
           </button>
         </div>
         {activeTab === studentTabs[0] && (
