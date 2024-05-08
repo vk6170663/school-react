@@ -15,7 +15,7 @@ export default function PersonalInfo({ register }) {
           <Label htmlFor={"firstName"}>First Name</Label>
           <input
             className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
-            type="text"
+            type={"text"}
             placeholder={"Enter First Name"}
             id={"firstName"}
             {...register("firstName")}
@@ -25,7 +25,7 @@ export default function PersonalInfo({ register }) {
           <Label htmlFor={"lastName"}>Last Name</Label>
           <input
             className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
-            type="text"
+            type={"text"}
             placeholder={"Enter Last Name"}
             id={"lastName"}
             {...register("lastName")}
@@ -71,7 +71,7 @@ export default function PersonalInfo({ register }) {
           <Label htmlFor={"caste"}>Caste</Label>
           <input
             className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
-            type="text"
+            type={"text"}
             placeholder={"Enter Caste"}
             id={"caste"}
             {...register("caste")}

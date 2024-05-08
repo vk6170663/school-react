@@ -48,7 +48,9 @@ export default function AddStudent({ studentToEdit = {} }) {
     setActiveTab(tab);
   }
 
-  function onSubmit(data) {
+  function onSubmit(data, e) {
+    e.preventDefault();
+
     console.log(data);
 
     // mutate({...data, image: data.studentPhoto[0]})
@@ -71,8 +73,8 @@ export default function AddStudent({ studentToEdit = {} }) {
                 key={tab}
                 className={
                   activeTab === studentTabs[i]
-                    ? "bg-gray-300 rounded-lg text-gray-700 px-4 py-3"
-                    : "text-gray-700 px-4 py-3"
+                    ? "bg-gray-300 rounded-lg text-gray-700 px-4 py-3 cursor-pointer"
+                    : "text-gray-700 px-4 py-3 cursor-pointer"
                 }
               >
                 {tab}
@@ -81,6 +83,7 @@ export default function AddStudent({ studentToEdit = {} }) {
           </ul>
 
           <button
+            type="submit"
             disabled={isCreating}
             className="bg-indigo-700 text-slate-50 font-semibold py-2 px-4 rounded-lg "
           >
