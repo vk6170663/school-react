@@ -10,9 +10,9 @@ function StudentSearchForm() {
             <Label htmlFor={"academicYear"}>Academic Year</Label>
             <select className={selectBorder} id={"academicYear"}>
               <option value="">Academic year</option>
-              <option value={"18-Mar-2024"}>2024 [Jan-Dec]</option>
-              <option value={"13-Jun-2023"}>2023 [Jan-Dec]</option>
-              <option value={"28-Apr-2023"}>2023 [Jan-Dec]</option>
+              <option value={"2016-17"}>2016-17</option>
+              <option value={"201-17"}>2016-17</option>
+              <option value={"2016-17"}>2016-17</option>
             </select>
           </div>
           <div className={labelDiv}>

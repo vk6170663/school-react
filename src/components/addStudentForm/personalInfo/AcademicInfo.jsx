@@ -7,14 +7,20 @@ import {
 
 import Label from "../../../ui/Label";
 import { useState } from "react";
+
 import AddAcademicYear from "../../addAcademicYear/AddAcademicYear";
 
 export default function AcademicInfo({ register }) {
-  const [showAcademicForm, setshowAcademicForm] = useState(false);
+  const [academicFormBox, setAcademicFormBox] = useState(false);
 
-  function handleShowAcademicForm(e) {
+  function showAcademicForm(e) {
     e.preventDefault();
-    setshowAcademicForm((show) => (show = true));
+    setAcademicFormBox((show) => (show = true));
+  }
+
+  function hideAcademicForm(e) {
+    e.preventDefault();
+    setAcademicFormBox((show) => (show = false));
   }
 
   return (
@@ -23,14 +29,11 @@ export default function AcademicInfo({ register }) {
         <h3 className={headingTertiary}>Academic Information</h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
           <div className={labelDiv}>
-            <div className="flex items-center justify-between pb-2">
+            <div className="flex items-center justify-between pb-3">
               <Label type={"addField"} htmlFor={"academicYear"}>
                 Academic Year
               </Label>
-              <button
-                className="cursor-pointer"
-                onClick={handleShowAcademicForm}
-              >
+              <button className="cursor-pointer" onClick={showAcademicForm}>
                 <FaPlus />
               </button>
             </div>
@@ -52,12 +55,12 @@ export default function AcademicInfo({ register }) {
               id={"class_Name"}
               {...register("class_Name")}
             >
-              <option value="">Class Name</option>
-              <option value={"1"}>1</option>
-              <option value={"2"}>2</option>
-              <option value={"3"}>3</option>
-              <option value={"4"}>4</option>
-              <option value={"5"}>5</option>
+              <option>Class Name</option>
+              {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
+                <option value={num} key={num}>
+                  {num}
+                </option>
+              ))}
             </select>
           </div>
           <div className={labelDiv}>
@@ -104,7 +107,7 @@ export default function AcademicInfo({ register }) {
           </div>
         </div>
       </div>
-      {showAcademicForm && <AddAcademicYear />}
+      {academicFormBox && <AddAcademicYear OnClick={hideAcademicForm} />}
     </>
   );
 }

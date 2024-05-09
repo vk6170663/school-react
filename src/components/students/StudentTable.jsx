@@ -19,18 +19,18 @@ export default function StudentTable() {
   return (
     <>
       <StudentSearchForm />
+      <div role="table">
+        <div role="row">
+          <div>Image</div>
+          <div>Student Name</div>
+          <div>Admission Date</div>
+          <div>Class</div>
+          <div>Section</div>
+        </div>
+        {students.map((student) => (
+          <StudentRow student={student} key={student.id} />
+        ))}
+      </div>
     </>
-    // <Table role="table">
-    //   <TableHeader role="row">
-    //     <div>Image</div>
-    //     <div>Student Name</div>
-    //     <div>Admission Date</div>
-    //     <div>Class</div>
-    //     <div>Section</div>
-    //   </TableHeader>
-    //   {students.map((student) => (
-    //     <StudentRow student={student} key={student.id} />
-    //   ))}
-    // </Table>
   );
 }
