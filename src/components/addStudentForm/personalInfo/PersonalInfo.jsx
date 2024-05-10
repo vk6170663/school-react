@@ -3,36 +3,32 @@ import {
   labelDiv,
   selectBorder,
 } from "../../../ui/AddStudentStyle";
-
+import Input from "../../../ui/Input";
 import Label from "../../../ui/Label";
+import FormRow from "../FormRow";
 
 export default function PersonalInfo({ register }) {
   return (
     <div className="px-3 sm:px-8">
       <h3 className={headingTertiary}>Personal Info</h3>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
-        <div className={labelDiv}>
-          <Label htmlFor={"firstName"}>First Name</Label>
-          <input
-            className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
+        <FormRow label={"First Name"}>
+          <Input
             type={"text"}
             placeholder={"Enter First Name"}
             id={"firstName"}
             {...register("firstName")}
           />
-        </div>
-        <div className={labelDiv}>
-          <Label htmlFor={"lastName"}>Last Name</Label>
-          <input
-            className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
+        </FormRow>
+        <FormRow label={"Last Name"}>
+          <Input
             type={"text"}
             placeholder={"Enter Last Name"}
             id={"lastName"}
             {...register("lastName")}
           />
-        </div>
-        <div className={labelDiv}>
-          <Label htmlFor={"gender"}>Gender</Label>
+        </FormRow>
+        <FormRow label={"Gender"}>
           <select
             className={selectBorder}
             id={"gender"}
@@ -42,18 +38,11 @@ export default function PersonalInfo({ register }) {
             <option value={"female"}>Female</option>
             <option value={"male"}>Male</option>
           </select>
-        </div>
-        <div className={labelDiv}>
-          <Label htmlFor={"dob"}>DOB</Label>
-          <input
-            className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
-            type={"date"}
-            id={"dob"}
-            {...register("dob")}
-          />
-        </div>
-        <div className={labelDiv}>
-          <Label htmlFor={"religion"}>Religion</Label>
+        </FormRow>
+        <FormRow label={"DOB"}>
+          <Input type={"date"} id={"dob"} {...register("dob")} />
+        </FormRow>
+        <FormRow label={"Religion"}>
           <select
             className={selectBorder}
             id={"religion"}
@@ -65,27 +54,23 @@ export default function PersonalInfo({ register }) {
             <option value={"sikh"}>Sikh</option>
             <option value={"islam"}>Islam</option>
           </select>
-        </div>
+        </FormRow>
 
-        <div className={labelDiv}>
-          <Label htmlFor={"caste"}>Caste</Label>
-          <input
-            className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
+        <FormRow label={"Caste"}>
+          <Input
             type={"text"}
             placeholder={"Enter Caste"}
             id={"caste"}
             {...register("caste")}
           />
-        </div>
-        <div className={labelDiv}>
-          <Label htmlFor={"studentPhoto"}>Student Photo</Label>
-          <input
-            className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
+        </FormRow>
+        <FormRow label={"Student Photo"}>
+          <Input
             type="file"
             id={"studentPhoto"}
             {...register("studentPhoto")}
           />
-        </div>
+        </FormRow>
       </div>
     </div>
   );

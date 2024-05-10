@@ -4,11 +4,13 @@ import {
   labelDiv,
   selectBorder,
 } from "../../../ui/AddStudentStyle";
+import Input from "../../../ui/Input";
 
-import Label from "../../../ui/Label";
 import { useState } from "react";
 
 import AddAcademicYear from "../../addAcademicYear/AddAcademicYear";
+import FormRow from "../FormRow";
+import Label from "../../../ui/Label";
 
 export default function AcademicInfo({ register }) {
   const [academicFormBox, setAcademicFormBox] = useState(false);
@@ -43,9 +45,9 @@ export default function AcademicInfo({ register }) {
               {...register("academicYear")}
             >
               <option value="">Academic year</option>
-              <option value={"18-Mar-2024"}>2024 [Jan-Dec]</option>
-              <option value={"13-Jun-2023"}>2023 [Jan-Dec]</option>
-              <option value={"28-Apr-2023"}>2023 [Jan-Dec]</option>
+              <option value={"2016-17"}>2016-17</option>
+              <option value={"2017-18"}>2017-18</option>
+              <option value={"2018-19"}>2018-19</option>
             </select>
           </div>
           <div className={labelDiv}>
@@ -55,8 +57,8 @@ export default function AcademicInfo({ register }) {
               id={"class_Name"}
               {...register("class_Name")}
             >
-              <option>Class Name</option>
-              {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
+              <option value={""}>Class Name</option>
+              {Array.from({ length: 5 }, (_, i) => i + 1).map((num) => (
                 <option value={num} key={num}>
                   {num}
                 </option>
@@ -78,8 +80,7 @@ export default function AcademicInfo({ register }) {
           </div>
           <div className={labelDiv}>
             <Label htmlFor={"admissionNo"}>Admission Number</Label>
-            <input
-              className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
+            <Input
               type={"number"}
               placeholder={"Enter Admission Number"}
               id={"admissionNo"}
@@ -88,23 +89,21 @@ export default function AcademicInfo({ register }) {
           </div>
           <div className={labelDiv}>
             <Label htmlFor={"admissionDate"}>Admission Date</Label>
-            <input
-              className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
+            <Input
               type={"date"}
               id={"admissionDate"}
               {...register("admissionDate")}
             />
           </div>
-          <div className={labelDiv}>
-            <Label htmlFor={"rollNumber"}>Roll Number</Label>
-            <input
-              className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
-              type={"number"}
-              placeholder={"Enter Roll Number"}
-              id={"rollNumber"}
+
+          <FormRow label="Roll Number">
+            <Input
+              type="number"
+              placeholder="Enter Roll Number"
+              id="rollNumber"
               {...register("rollNumber")}
             />
-          </div>
+          </FormRow>
         </div>
       </div>
       {academicFormBox && <AddAcademicYear OnClick={hideAcademicForm} />}

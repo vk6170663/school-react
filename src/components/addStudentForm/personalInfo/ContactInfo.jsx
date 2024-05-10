@@ -1,4 +1,5 @@
 import { headingTertiary, labelDiv } from "../../../ui/AddStudentStyle";
+import Input from "../../../ui/Input";
 
 import Label from "../../../ui/Label";
 
@@ -9,8 +10,7 @@ export default function ContactInfo({ register }) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
         <div className={labelDiv}>
           <Label htmlFor={"emailAddress"}>Email Address</Label>
-          <input
-            className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
+          <Input
             type={"email"}
             placeholder={"Enter Email"}
             id={"emailAddress"}
@@ -19,8 +19,7 @@ export default function ContactInfo({ register }) {
         </div>
         <div className={labelDiv}>
           <Label htmlFor={"phoneNo"}>Phone Number</Label>
-          <input
-            className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
+          <Input
             type={"tel"}
             placeholder={"Enter Phone Number"}
             id={"phoneNo"}

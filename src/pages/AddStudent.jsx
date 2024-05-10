@@ -56,6 +56,10 @@ export default function AddStudent({ studentToEdit = {} }) {
     // mutate({...data, image: data.studentPhoto[0]})
   }
 
+  // function onError(errors) {
+  //   console.log(errors);
+  // }
+
   return (
     <main className="p-2 sm:px-5">
       <form onSubmit={handleSubmit(onSubmit)}>
