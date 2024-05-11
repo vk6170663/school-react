@@ -1,10 +1,4 @@
-import {
-  headingTertiary,
-  labelDiv,
-  selectBorder,
-} from "../../../ui/AddStudentStyle";
-
-import Label from "../../../ui/Label";
+import { headingTertiary, selectBorder } from "../../../ui/AddStudentStyle";
 import FormRow from "../FormRow";
 
 export default function OtherInfo({ register }) {

@@ -1,10 +1,5 @@
-import {
-  headingTertiary,
-  labelDiv,
-  selectBorder,
-} from "../../../ui/AddStudentStyle";
+import { headingTertiary, selectBorder } from "../../../ui/AddStudentStyle";
 
-import Label from "../../../ui/Label";
 import FormRow from "../FormRow";
 
 export default function MedicalInfo({ register }) {

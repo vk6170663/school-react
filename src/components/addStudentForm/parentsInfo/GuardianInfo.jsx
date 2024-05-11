@@ -1,6 +1,4 @@
-import { headingTertiary, labelDiv } from "../../../ui/AddStudentStyle";
-
-import Label from "../../../ui/Label";
+import { headingTertiary } from "../../../ui/AddStudentStyle";
 import FormRow from "../FormRow";
 
 export default function GuardianInfo({ register }) {

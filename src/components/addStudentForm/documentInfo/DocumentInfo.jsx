@@ -1,6 +1,5 @@
-import { headingTertiary, labelDiv } from "../../../ui/AddStudentStyle";
+import { headingTertiary } from "../../../ui/AddStudentStyle";
 
-import Label from "../../../ui/Label";
 import FormRow from "../FormRow";
 import BankInfo from "./BankInfo";
 import DocAttachment from "./DocAttachment";
