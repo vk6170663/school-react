@@ -9,7 +9,7 @@ import { useState } from "react";
 
 const TableRow = styled.div`
   display: grid;
-  grid-template-columns: 0.6fr 1.8fr 2.2fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(7, 1fr);
   column-gap: 2.4rem;
   align-items: center;
   padding: 1.4rem 2.4rem;
@@ -28,22 +28,11 @@ const Img = styled.img`
   transform: scale(1.5) translateX(-7px);
 `;
 
-const Cabin = styled.div`
-  font-size: 1.6rem;
-  font-weight: 600;
+const Fields = styled.div`
+  font-size: 1.2rem;
+  font-weight: 500;
   color: var(--color-grey-600);
   font-family: "Sono";
-`;
-
-const Price = styled.div`
-  font-family: "Sono";
-  font-weight: 600;
-`;
-
-const Discount = styled.div`
-  font-family: "Sono";
-  font-weight: 500;
-  color: var(--color-green-700);
 `;
 
 export default function StudentRow({ student }) {
@@ -56,6 +45,7 @@ export default function StudentRow({ student }) {
     section,
     studentImage,
     admissionDate,
+    fatherName,
   } = student;
 
   const queryClient = useQueryClient();
@@ -76,14 +66,17 @@ export default function StudentRow({ student }) {
     <>
       <TableRow role="row">
         <Img src={studentImage} />
-        <Cabin>{firstName}</Cabin>
-        <div>{admissionDate}</div>
-        <Price>{className}</Price>
-        <Discount>{section}</Discount>
-        <button onClick={() => setShowForm((show) => !show)}>Edit</button>
-        <button onClick={() => mutate(studentId)} disabled={isDeleting}>
-          Delete
-        </button>
+        <Fields>{firstName}</Fields>
+        <Fields>{admissionDate}</Fields>
+        <Fields>{className}</Fields>
+        <Fields>{section}</Fields>
+        <Fields>{fatherName}</Fields>
+        <div>
+          <button onClick={() => setShowForm((show) => !show)}>Edit</button>
+          <button onClick={() => mutate(studentId)} disabled={isDeleting}>
+            Delete
+          </button>
+        </div>
       </TableRow>
 
       {showForm && <AddStudent studentToEdit={student} />}

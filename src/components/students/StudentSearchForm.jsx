@@ -3,7 +3,7 @@ import Label from "../../ui/Label";
 
 function StudentSearchForm() {
   return (
-    <div className="p-2 sm:px-5">
+    <>
       <form action="">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 pt-5">
           <div className={labelDiv}>
@@ -11,8 +11,8 @@ function StudentSearchForm() {
             <select className={selectBorder} id={"academicYear"}>
               <option value="">Academic year</option>
               <option value={"2016-17"}>2016-17</option>
-              <option value={"2017-18"}>2016-17</option>
-              <option value={"2018-19"}>2016-17</option>
+              <option value={"2017-18"}>2017-18</option>
+              <option value={"2018-19"}>2018-19</option>
             </select>
           </div>
           <div className={labelDiv}>
@@ -32,7 +32,7 @@ function StudentSearchForm() {
               <option value="">Section</option>
               <option value={"A"}>A</option>
               <option value={"B"}>B</option>
-              <option value={"C"}>B</option>
+              <option value={"C"}>C</option>
             </select>
           </div>
           <div className={labelDiv}>
@@ -63,7 +63,7 @@ function StudentSearchForm() {
           </div>
         </div>
       </form>
-    </div>
+    </>
   );
 }
 

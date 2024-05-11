@@ -50,8 +50,7 @@ export default function AcademicInfo({ register }) {
               <option value={"2018-19"}>2018-19</option>
             </select>
           </div>
-          <div className={labelDiv}>
-            <Label htmlFor={"class_Name"}>Class Name</Label>
+          <FormRow label={"Class Name"}>
             <select
               className={selectBorder}
               id={"class_Name"}
@@ -64,9 +63,8 @@ export default function AcademicInfo({ register }) {
                 </option>
               ))}
             </select>
-          </div>
-          <div className={labelDiv}>
-            <Label htmlFor={"section"}>Section</Label>
+          </FormRow>
+          <FormRow label={"Section"}>
             <select
               className={selectBorder}
               id={"section"}
@@ -77,25 +75,22 @@ export default function AcademicInfo({ register }) {
               <option value={"B"}>B</option>
               <option value={"C"}>B</option>
             </select>
-          </div>
-          <div className={labelDiv}>
-            <Label htmlFor={"admissionNo"}>Admission Number</Label>
+          </FormRow>
+          <FormRow label={"Admission Number"}>
             <Input
               type={"number"}
               placeholder={"Enter Admission Number"}
               id={"admissionNo"}
               {...register("admissionNo")}
             />
-          </div>
-          <div className={labelDiv}>
-            <Label htmlFor={"admissionDate"}>Admission Date</Label>
+          </FormRow>
+          <FormRow label={"Admission Date"}>
             <Input
               type={"date"}
               id={"admissionDate"}
               {...register("admissionDate")}
             />
-          </div>
-
+          </FormRow>
           <FormRow label="Roll Number">
             <Input
               type="number"
