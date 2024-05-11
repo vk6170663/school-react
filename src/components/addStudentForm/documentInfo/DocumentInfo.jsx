@@ -1,6 +1,7 @@
 import { headingTertiary, labelDiv } from "../../../ui/AddStudentStyle";
 
 import Label from "../../../ui/Label";
+import FormRow from "../FormRow";
 import BankInfo from "./BankInfo";
 import DocAttachment from "./DocAttachment";
 
@@ -10,8 +11,7 @@ export default function DocumentInfo({ register }) {
       <div className="px-3 sm:px-8">
         <h3 className={headingTertiary}>Document Info</h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
-          <div className={labelDiv}>
-            <Label htmlFor={"nationalIdCard"}>National Id Card</Label>
+          <FormRow label={"National ID Card"}>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
               type="text"
@@ -19,9 +19,8 @@ export default function DocumentInfo({ register }) {
               id={"nationalIdCard"}
               {...register("nationalIdCard")}
             />
-          </div>
-          <div className={labelDiv}>
-            <Label htmlFor={"birthCertificateNo"}>Birth Certificate No.</Label>
+          </FormRow>
+          <FormRow label={"Birth Certificate No."}>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
               type="text"
@@ -29,16 +28,15 @@ export default function DocumentInfo({ register }) {
               id={"birthCertificateNo"}
               {...register("birthCertificateNo")}
             />
-          </div>
-          <div className={`${labelDiv} col-span-full`}>
-            <Label htmlFor={"additionalNotes"}>Additional Notes</Label>
+          </FormRow>
+          <FormRow label={"Additional Notes"}>
             <textarea
               className="border border-gray-400 px-5 py-3 text-gray-400 text-sm"
               rows="2"
               id={"additionalNotes"}
               {...register("additionalNotes")}
             />
-          </div>
+          </FormRow>
         </div>
       </div>
       <BankInfo register={register} />

@@ -1,5 +1,6 @@
 import { headingTertiary, labelDiv } from "../../../ui/AddStudentStyle";
 import Label from "../../../ui/Label";
+import FormRow from "../FormRow";
 import GuardianInfo from "./GuardianInfo";
 
 export default function ParentInfo({ register }) {
@@ -8,8 +9,7 @@ export default function ParentInfo({ register }) {
       <div className="px-3 sm:px-8">
         <h3 className={headingTertiary}>Parents Info</h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
-          <div className={labelDiv}>
-            <Label htmlFor={"fatherName"}>Father Name</Label>
+          <FormRow label={"Father Name"}>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
               type={"text"}
@@ -17,9 +17,8 @@ export default function ParentInfo({ register }) {
               id={"fatherName"}
               {...register("fatherName")}
             />
-          </div>
-          <div className={labelDiv}>
-            <Label htmlFor={"fatherOccupation"}>Father Occupation</Label>
+          </FormRow>
+          <FormRow label={"Father Occupation"}>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
               type={"text"}
@@ -27,9 +26,8 @@ export default function ParentInfo({ register }) {
               id={"fatherOccupation"}
               {...register("fatherOccupation")}
             />
-          </div>
-          <div className={labelDiv}>
-            <Label htmlFor={"fatherPhoneNo"}>Father Phone No.</Label>
+          </FormRow>
+          <FormRow label={"Father Phone No."}>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
               type={"tel"}
@@ -37,18 +35,16 @@ export default function ParentInfo({ register }) {
               id={"fatherPhoneNo"}
               {...register("fatherPhoneNo")}
             />
-          </div>
-          <div className={labelDiv}>
-            <Label htmlFor={"fatherPhoto"}>Father Photo</Label>
+          </FormRow>
+          <FormRow label={"Father Photo"}>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
               type={"file"}
               id={"fatherPhoto"}
               {...register("fatherPhoto")}
             />
-          </div>
-          <div className={labelDiv}>
-            <Label htmlFor={"motherName"}>Mother Name</Label>
+          </FormRow>
+          <FormRow label={"Mother Name"}>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
               type={"text"}
@@ -56,9 +52,8 @@ export default function ParentInfo({ register }) {
               id={"motherName"}
               {...register("motherName")}
             />
-          </div>
-          <div className={labelDiv}>
-            <Label htmlFor={"motherOccupation"}>Mother Occupation</Label>
+          </FormRow>
+          <FormRow label={"Mother Occupation"}>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
               type={"text"}
@@ -66,9 +61,8 @@ export default function ParentInfo({ register }) {
               id={"motherOccupation"}
               {...register("motherOccupation")}
             />
-          </div>
-          <div className={labelDiv}>
-            <Label htmlFor={"motherPhone"}>Mother Phone No.</Label>
+          </FormRow>
+          <FormRow label={"Mother Phone No."}>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
               type={"tel"}
@@ -76,16 +70,15 @@ export default function ParentInfo({ register }) {
               id={"motherPhone"}
               {...register("motherPhone")}
             />
-          </div>
-          <div className={labelDiv}>
-            <Label htmlFor={"motherPhoto"}>Mother Photo</Label>
+          </FormRow>
+          <FormRow label={"Mother Photo"}>
             <input
               className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
               type={"file"}
               id={"motherPhoto"}
               {...register("motherPhoto")}
             />
-          </div>
+          </FormRow>
         </div>
       </div>
       <GuardianInfo register={register} />

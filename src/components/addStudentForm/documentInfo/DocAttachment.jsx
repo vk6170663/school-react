@@ -8,7 +8,7 @@ export default function DocAttachment({ register }) {
       <h3 className={headingTertiary}>Document Attachment</h3>
 
       <p>Test</p>
-      {/* <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-8 pt-5">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-8 pt-5">
         <div className={labelDiv}>
           <Label htmlFor={"doc01"}>Document 01 Title</Label>
           <input
@@ -69,7 +69,7 @@ export default function DocAttachment({ register }) {
             {...register("")}
           />
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

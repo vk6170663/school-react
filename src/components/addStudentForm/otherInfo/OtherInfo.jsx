@@ -5,6 +5,7 @@ import {
 } from "../../../ui/AddStudentStyle";
 
 import Label from "../../../ui/Label";
+import FormRow from "../FormRow";
 
 export default function OtherInfo({ register }) {
   return (
@@ -12,8 +13,7 @@ export default function OtherInfo({ register }) {
       <div className="px-3 sm:px-8">
         <h3 className={headingTertiary}>TRANSPORT</h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
-          <div className={labelDiv}>
-            <Label htmlFor={"routeList"}>Route List</Label>
+          <FormRow label={"Route List"}>
             <select
               className={selectBorder}
               id={"routeList"}
@@ -22,9 +22,8 @@ export default function OtherInfo({ register }) {
               <option value="">Route List</option>
               <option value="">Jalandhar-Nakodar</option>
             </select>
-          </div>
-          <div className={labelDiv}>
-            <Label htmlFor={"vehicleNumber"}>Vehicle Number</Label>
+          </FormRow>
+          <FormRow label={"Vehicle Number"}>
             <select
               className={selectBorder}
               id={"vehicleNumber"}
@@ -37,14 +36,13 @@ export default function OtherInfo({ register }) {
               <option value="">44364</option>
               <option value="">543643</option>
             </select>
-          </div>
+          </FormRow>
         </div>
       </div>
       <div className="px-3 sm:px-8">
         <h3 className={headingTertiary}>OTHER INFO</h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
-          <div className={labelDiv}>
-            <Label htmlFor={"dormitory"}>Dormitory</Label>
+          <FormRow label={"Dormitory"}>
             <select
               className={selectBorder}
               id={"dormitory"}
@@ -53,9 +51,8 @@ export default function OtherInfo({ register }) {
               <option value="">Dormitory Name</option>
               <option value="">Sir Isaac Newton Hotel</option>
             </select>
-          </div>
-          <div className={labelDiv}>
-            <Label htmlFor={"roomNumber"}>Room Number</Label>
+          </FormRow>
+          <FormRow label={"Room Number"}>
             <select
               className={selectBorder}
               id={"roomNumber"}
@@ -66,7 +63,7 @@ export default function OtherInfo({ register }) {
               <option value="">2</option>
               <option value="">3</option>
             </select>
-          </div>
+          </FormRow>
         </div>
       </div>
     </div>

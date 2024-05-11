@@ -1,14 +1,14 @@
 import { headingTertiary, labelDiv } from "../../../ui/AddStudentStyle";
 
 import Label from "../../../ui/Label";
+import FormRow from "../FormRow";
 
 export default function BankInfo({ register }) {
   return (
     <div className="px-3 sm:px-8">
       <h3 className={headingTertiary}>Bank Information</h3>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
-        <div className={labelDiv}>
-          <Label htmlFor={"bankName"}>Bank Name</Label>
+        <FormRow label={"Bank Name"}>
           <input
             className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
             type="text"
@@ -16,9 +16,8 @@ export default function BankInfo({ register }) {
             id={"bankName"}
             {...register("bankName")}
           />
-        </div>
-        <div className={labelDiv}>
-          <Label htmlFor={"bankAccNo"}>Bank Account Number</Label>
+        </FormRow>
+        <FormRow label={"Bank Account Number"}>
           <input
             className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
             type="number"
@@ -26,9 +25,8 @@ export default function BankInfo({ register }) {
             id={"bankAccNo"}
             {...register("bankAccNo")}
           />
-        </div>
-        <div className={labelDiv}>
-          <Label htmlFor={"ifsc"}> Ifsc Code</Label>
+        </FormRow>
+        <FormRow label={"Ifsc Code"}>
           <input
             className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
             type="text"
@@ -36,7 +34,7 @@ export default function BankInfo({ register }) {
             id={"ifsc"}
             {...register("ifsc")}
           />
-        </div>
+        </FormRow>
       </div>
     </div>
   );

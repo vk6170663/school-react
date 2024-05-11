@@ -1,14 +1,14 @@
 import { headingTertiary, labelDiv } from "../../../ui/AddStudentStyle";
 
 import Label from "../../../ui/Label";
+import FormRow from "../FormRow";
 
 export default function GuardianInfo({ register }) {
   return (
     <div className="px-8">
       <h3 className={headingTertiary}>Guardian Info</h3>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">
-        <div className={labelDiv}>
-          <Label htmlFor={"guardianName"}>Guardian Name</Label>
+        <FormRow label={"Guardian Name"}>
           <input
             className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
             type="text"
@@ -16,9 +16,8 @@ export default function GuardianInfo({ register }) {
             id={"guardianName"}
             {...register("guardianName")}
           />
-        </div>
-        <div className={labelDiv}>
-          <Label htmlFor={"guardianRelation"}>Relation with Guardian</Label>
+        </FormRow>
+        <FormRow label={"Relation with Guardian"}>
           <input
             className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
             type="text"
@@ -26,9 +25,8 @@ export default function GuardianInfo({ register }) {
             id={"guardianRelation"}
             {...register("guardianRelation")}
           />
-        </div>
-        <div className={labelDiv}>
-          <Label htmlFor={"guardianEmail"}>Guardian Email</Label>
+        </FormRow>
+        <FormRow label={"Guardian Email"}>
           <input
             className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
             type="text"
@@ -36,18 +34,16 @@ export default function GuardianInfo({ register }) {
             id={"guardianEmail"}
             {...register("guardianEmail")}
           />
-        </div>
-        <div className={labelDiv}>
-          <Label htmlFor={"guardianPhoto"}>Guardian Photo</Label>
+        </FormRow>
+        <FormRow label={"Guardian Photo"}>
           <input
             className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
             type="file"
             id={"guardianPhoto"}
             {...register("guardianPhoto")}
           />
-        </div>
-        <div className={labelDiv}>
-          <Label htmlFor={"guardianPhoneNo"}>Guardian Phone No.</Label>
+        </FormRow>
+        <FormRow label={"Guardian Phone No."}>
           <input
             className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
             type={"tel"}
@@ -55,9 +51,8 @@ export default function GuardianInfo({ register }) {
             id={"guardianPhoneNo"}
             {...register("guardianPhoneNo")}
           />
-        </div>
-        <div className={labelDiv}>
-          <Label htmlFor={"guardianOccupation"}>Guardian Occupation</Label>
+        </FormRow>
+        <FormRow label={"Guardian Occupation"}>
           <input
             className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
             type="text"
@@ -65,16 +60,15 @@ export default function GuardianInfo({ register }) {
             id={"guardianOccupation"}
             {...register("guardianOccupation")}
           />
-        </div>
-        <div className="flex flex-col col-span-full mb-5">
-          <Label htmlFor={"guardianAddress"}>Guardian Address</Label>
+        </FormRow>
+        <FormRow label={"Guardian Address"}>
           <textarea
             className="border border-gray-400 px-5 py-3 text-gray-400 text-sm"
             id={"guardianAddress"}
             {...register("guardianAddress")}
             rows="2"
           />
-        </div>
+        </FormRow>
       </div>
     </div>
   );
