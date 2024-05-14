@@ -5,7 +5,7 @@ function StudentSearchForm() {
   return (
     <>
       <form action="">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 pt-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 pt-5">
           <div className={labelDiv}>
             <Label htmlFor={"academicYear"}>Academic Year</Label>
             <select className={selectBorder} id={"academicYear"}>

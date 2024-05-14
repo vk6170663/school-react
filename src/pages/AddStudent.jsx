@@ -61,7 +61,7 @@ export default function AddStudent({ studentToEdit = {} }) {
   // }
 
   return (
-    <main className="p-2 sm:px-5">
+    <div className="p-2 sm:px-5">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex sm:flex-row flex-col items-center justify-between mb-6">
           <h3 className={headingTertiary}>Add Student</h3>
@@ -102,6 +102,9 @@ export default function AddStudent({ studentToEdit = {} }) {
         {activeTab === studentTabs[3] && <PreviousSchool register={register} />}
         {activeTab === studentTabs[4] && <OtherInfo register={register} />}
       </form>
-    </main>
+      <p className="text-center text-xs text-gray-400 mt-8 tracking-wider ">
+        Terms and Conditions Apply
+      </p>
+    </div>
   );
 }

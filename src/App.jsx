@@ -9,6 +9,7 @@ import AddStudent from "./pages/AddStudent";
 import AllStudent from "./pages/AllStudent";
 import NotFound from "./pages/NotFound";
 import { Toaster } from "react-hot-toast";
+import RegistrationForm from "./components/registrationForm/RegistrationForm";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,13 +30,14 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="add-student" element={<AddStudent />} />
             <Route path="all-student" element={<AllStudent />} />
+            <Route path="registration-form" element={<RegistrationForm />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
 
       <Toaster
-        position="top-centerkkk"
+        position="top-center"
         gutter={12}
         containerStyle={{ margin: "8px" }}
         toastOptions={{

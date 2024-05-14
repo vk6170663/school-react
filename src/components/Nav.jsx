@@ -38,8 +38,8 @@ export default function Nav() {
           </ul>
         </li>
         <li>
-          <Link className={flexLink}>
-            <span>Teachers</span>
+          <Link to="/registration-form" className={flexLink}>
+            <span>Registration</span>
           </Link>
         </li>
         <li>

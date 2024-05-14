@@ -9,7 +9,7 @@ import { useState } from "react";
 
 const TableRow = styled.div`
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(13, 140px);
   column-gap: 2.4rem;
   align-items: center;
   padding: 1.4rem 2.4rem;
@@ -17,15 +17,6 @@ const TableRow = styled.div`
   &:not(:last-child) {
     border-bottom: 1px solid var(--color-grey-100);
   }
-`;
-
-const Img = styled.img`
-  display: block;
-  width: 6.4rem;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  object-position: center;
-  transform: scale(1.5) translateX(-7px);
 `;
 
 const Fields = styled.div`
@@ -40,12 +31,18 @@ export default function StudentRow({ student }) {
 
   const {
     id: studentId,
-    firstName,
-    className,
-    section,
-    studentImage,
+    admissionNumber,
     admissionDate,
+    firstName,
+    class_Name,
+    section,
     fatherName,
+    fatherPhoneNo,
+    motherName,
+    motherPhoneNo,
+    address,
+    feeDue,
+    lastFeePaid,
   } = student;
 
   const queryClient = useQueryClient();
@@ -65,15 +62,37 @@ export default function StudentRow({ student }) {
   return (
     <>
       <TableRow role="row">
-        <Img src={studentImage} />
-        <Fields>{firstName}</Fields>
+        <Fields>{admissionNumber}</Fields>
         <Fields>{admissionDate}</Fields>
-        <Fields>{className}</Fields>
+        <Fields>{firstName}</Fields>
+        <Fields>{class_Name}</Fields>
         <Fields>{section}</Fields>
-        <Fields>{fatherName}</Fields>
+        <Fields>{section}</Fields>
+        <Fields>{section}</Fields>
+        <Fields>{section}</Fields>
+        <Fields>{section}</Fields>
+        <Fields>{section}</Fields>
+        <Fields>{section}</Fields>
+        <Fields>{section}</Fields>
+        {/* <Fields>{fatherName}</Fields>
+        <Fields>{fatherPhoneNo}</Fields>
+        <Fields>{motherName}</Fields>
+        <Fields>{motherPhoneNo}</Fields>
+        <Fields>{address}</Fields>
+        <Fields>{feeDue}</Fields>
+        <Fields>{lastFeePaid}</Fields> */}
         <div>
-          <button onClick={() => setShowForm((show) => !show)}>Edit</button>
-          <button onClick={() => mutate(studentId)} disabled={isDeleting}>
+          <button
+            className="border pe-4 me-8"
+            onClick={() => setShowForm((show) => !show)}
+          >
+            Edit
+          </button>
+          <button
+            className="border"
+            onClick={() => mutate(studentId)}
+            disabled={isDeleting}
+          >
             Delete
           </button>
         </div>

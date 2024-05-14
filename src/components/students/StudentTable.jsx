@@ -10,12 +10,13 @@ const Table = styled.div`
   font-size: 1rem;
   background-color: var(--color-grey-0);
   border-radius: 7px;
-  overflow: hidden;
+  overflow-x: scroll;
 `;
 
 const TableHeader = styled.header`
+  // display: flex;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(13, 140px);
   column-gap: 2.4rem;
   align-items: center;
   background-color: var(--color-grey-50);
@@ -40,16 +41,22 @@ export default function StudentTable() {
   if (isLoading) return <Spinner />;
 
   return (
-    <div className="p-2 sm:px-5">
+    <div className="p-2 sm:px-5 max-w-[1140px] overflow-x-hidden">
       <StudentSearchForm />
       <Table role="table">
         <TableHeader role="row">
-          <div>Image</div>
-          <div>Student Name</div>
+          <div>Admission No.</div>
           <div>Admission Date</div>
+          <div>Student Name</div>
           <div>Class</div>
           <div>Section</div>
           <div>Father Name</div>
+          <div>Father Phone No.</div>
+          <div>Mother Name</div>
+          <div>Mother Phone No.</div>
+          <div>Address</div>
+          <div>fee due</div>
+          <div>Last Fee Paid</div>
         </TableHeader>
         {students.map((student) => (
           <StudentRow student={student} key={student.id} />
