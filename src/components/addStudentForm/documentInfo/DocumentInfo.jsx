@@ -1,10 +1,7 @@
 import { headingTertiary } from "../../../ui/AddStudentStyle";
-
 import FormRow from "../FormRow";
-import BankInfo from "./BankInfo";
-import DocAttachment from "./DocAttachment";
 
-export default function DocumentInfo({ register }) {
+export default function DocumentInfo({ register, children }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">
       <div className="px-3 sm:px-8">
@@ -38,8 +35,7 @@ export default function DocumentInfo({ register }) {
           </FormRow>
         </div>
       </div>
-      <BankInfo register={register} />
-      <DocAttachment register={register} />
+      {children}
     </div>
   );
 }

@@ -2,14 +2,14 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Toaster } from "react-hot-toast";
 
 import AppLayout from "./ui/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import AddStudent from "./pages/AddStudent";
 import AllStudent from "./pages/AllStudent";
 import NotFound from "./pages/NotFound";
-import { Toaster } from "react-hot-toast";
-import RegistrationForm from "./components/registrationForm/RegistrationForm";
+import RegistrationForm from "./pages/RegistrationForm";
 
 const queryClient = new QueryClient({
   defaultOptions: {

@@ -8,11 +8,17 @@ import ParentInfo from "../components/addStudentForm/parentsInfo/ParentsInfo";
 import DocumentInfo from "../components/addStudentForm/documentInfo/DocumentInfo";
 import PreviousSchool from "../components/addStudentForm/previousSchool/PreviousSchool";
 import OtherInfo from "../components/addStudentForm/otherInfo/OtherInfo";
-import PersonalInfoTab from "../components/addStudentForm/personalInfo/PersonalInfoTab";
+import PersonalInfo from "../components/addStudentForm/personalInfo/PersonalInfo";
+import ContactInfo from "../components/addStudentForm/personalInfo/ContactInfo";
+import MedicalInfo from "../components/addStudentForm/personalInfo/MedicalInfo";
 
 import { createEditStudent } from "../services/apiStudents";
 
 import { useState } from "react";
+import AcademicInfo from "../components/addStudentForm/personalInfo/AcademicInfo";
+import GuardianInfo from "../components/addStudentForm/parentsInfo/GuardianInfo";
+import BankInfo from "../components/addStudentForm/documentInfo/BankInfo";
+import DocAttachment from "../components/addStudentForm/documentInfo/DocAttachment";
 
 const studentTabs = [
   "Personal Info",
@@ -95,16 +101,27 @@ export default function AddStudent({ studentToEdit = {} }) {
           </button>
         </div>
         {activeTab === studentTabs[0] && (
-          <PersonalInfoTab register={register} />
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            <AcademicInfo register={register} />
+            <PersonalInfo register={register} />
+            <ContactInfo register={register} />
+            <MedicalInfo register={register} />
+          </div>
         )}
-        {activeTab === studentTabs[1] && <ParentInfo register={register} />}
-        {activeTab === studentTabs[2] && <DocumentInfo register={register} />}
+        {activeTab === studentTabs[1] && (
+          <ParentInfo register={register}>
+            <GuardianInfo register={register} />
+          </ParentInfo>
+        )}
+        {activeTab === studentTabs[2] && (
+          <DocumentInfo register={register}>
+            <BankInfo register={register} />
+            <DocAttachment register={register} />
+          </DocumentInfo>
+        )}
         {activeTab === studentTabs[3] && <PreviousSchool register={register} />}
         {activeTab === studentTabs[4] && <OtherInfo register={register} />}
       </form>
-      <p className="text-center text-xs text-gray-400 mt-8 tracking-wider ">
-        Terms and Conditions Apply
-      </p>
     </div>
   );
 }

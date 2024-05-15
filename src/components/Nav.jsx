@@ -44,7 +44,10 @@ export default function Nav() {
         </li>
         <li>
           <Link className={flexLink}>
-            <span>Fees Registration</span>
+            <span>Fees</span>
+            <ul>
+              <li>Add Fees</li>
+            </ul>
           </Link>
         </li>
         <li>

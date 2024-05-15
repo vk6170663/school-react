@@ -1,8 +1,7 @@
 import { headingTertiary } from "../../../ui/AddStudentStyle";
 import FormRow from "../FormRow";
-import GuardianInfo from "./GuardianInfo";
 
-export default function ParentInfo({ register }) {
+export default function ParentInfo({ register, children }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">
       <div className="px-3 sm:px-8">
@@ -80,7 +79,7 @@ export default function ParentInfo({ register }) {
           </FormRow>
         </div>
       </div>
-      <GuardianInfo register={register} />
+      {children}
     </div>
   );
 }
