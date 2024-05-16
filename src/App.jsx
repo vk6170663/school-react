@@ -10,6 +10,7 @@ import AddStudent from "./pages/AddStudent";
 import AllStudent from "./pages/AllStudent";
 import NotFound from "./pages/NotFound";
 import RegistrationForm from "./pages/RegistrationForm";
+import FeesType from "./pages/FeesType";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,6 +32,7 @@ function App() {
             <Route path="add-student" element={<AddStudent />} />
             <Route path="all-student" element={<AllStudent />} />
             <Route path="registration-form" element={<RegistrationForm />} />
+            <Route path="add-fees" element={<FeesType />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
