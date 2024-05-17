@@ -1,6 +1,6 @@
 import supabase, { supabaseUrl } from "./supabase";
 
-export async function getAllFeesType() {
+export async function getFeesType() {
   const { data, error } = await supabase.from("fee_type").select("*");
 
   if (error) {
@@ -11,9 +11,13 @@ export async function getAllFeesType() {
   return data;
 }
 
-export async function createFee() {
-  const { data, error } = await supabase
-    .from("fee_type")
-    .insert([{ some_column: "someValue", other_column: "otherValue" }])
-    .select();
+export async function createFee(newFee) {
+  const { data, error } = await supabase.from("fee_type").insert([newFee]);
+
+  if (error) {
+    console.error(error);
+    throw new Error("Fee type could not be created");
+  }
+
+  return data;
 }

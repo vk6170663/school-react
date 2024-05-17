@@ -22,6 +22,7 @@ export default function Nav() {
             <PiStudentFill />
             <span>Student</span>
           </Link>
+
           <ul className={dropLink}>
             <li>
               <Link to="/add-student" className={flexLink}>
