@@ -21,3 +21,14 @@ export async function createFee(newFee) {
 
   return data;
 }
+
+export async function deleteFee(id) {
+  const { data, error } = await supabase.from("fee_type").delete().eq("id", id);
+
+  if (error) {
+    console.error(error);
+    throw new Error("Fee type could not be deleted");
+  }
+
+  return data;
+}

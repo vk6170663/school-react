@@ -10,7 +10,7 @@ export default function AppLayout() {
     <div className={gridStyle}>
       <Sidebar />
       <Header />
-      <main className="h-screen">
+      <main>
         <Outlet />
       </main>
       <Footer />

@@ -3,7 +3,7 @@ import FormRow from "../FormRow";
 
 export default function OtherInfo({ register }) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 pb-24">
+    <div className="grid grid-cols-1 lg:grid-cols-2 pb-28">
       <div className="px-3 sm:px-8">
         <h3 className={headingTertiary}>TRANSPORT</h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 pt-5">

@@ -74,13 +74,7 @@ export default function StudentRow({ student }) {
         <Fields>{section}</Fields>
         <Fields>{section}</Fields>
         <Fields>{section}</Fields>
-        {/* <Fields>{fatherName}</Fields>
-        <Fields>{fatherPhoneNo}</Fields>
-        <Fields>{motherName}</Fields>
-        <Fields>{motherPhoneNo}</Fields>
-        <Fields>{address}</Fields>
-        <Fields>{feeDue}</Fields>
-        <Fields>{lastFeePaid}</Fields> */}
+
         <div>
           <button
             className="border pe-4 me-8"
