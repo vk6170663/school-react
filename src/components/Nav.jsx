@@ -53,6 +53,11 @@ export default function Nav() {
                 <span>Add Fees</span>
               </Link>
             </li>
+            <li>
+              <Link to="/fee-invoice" className={flexLink}>
+                <span>Fee Invoice</span>
+              </Link>
+            </li>
           </ul>
         </li>
         <li>

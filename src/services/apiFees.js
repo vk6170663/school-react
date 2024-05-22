@@ -1,4 +1,4 @@
-import supabase, { supabaseUrl } from "./supabase";
+import supabase from "./supabase";
 
 export async function getFeesType() {
   const { data, error } = await supabase.from("fee_type").select("*");
