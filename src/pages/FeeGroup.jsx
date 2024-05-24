@@ -1,36 +1,36 @@
 import { useForm } from "react-hook-form";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import toast from "react-hot-toast";
+import { getFeesType } from "../services/apiFeesType";
 
-import { createFee, deleteFee, getFeesType } from "../services/apiFeesType";
-
-import Spinner from "../ui/Spinner";
-
-import { FaCheck } from "react-icons/fa";
-
-import { headingTertiary } from "../ui/AddStudentStyle";
+import { headingTertiary, selectBorder } from "../ui/AddStudentStyle";
 import FormRow from "../components/addStudentForm/FormRow";
+import { FaCheck } from "react-icons/fa";
+import toast from "react-hot-toast";
+import Spinner from "../ui/Spinner";
+import { createFeeGroup } from "../services/apiFeesGroup";
 
-function FeesType() {
+function FeeGroup() {
   const { register, handleSubmit, reset } = useForm();
   const queryClient = useQueryClient();
 
-  // getting or displaying all fee type
+  // getting or displaying all fee type for fee group
   const {
     isLoading,
-    data: fees,
+    data: feeGroup,
     error,
   } = useQuery({
-    queryKey: ["fees"],
+    queryKey: ["feeGroup"],
     queryFn: getFeesType,
   });
 
+  console.log(feeGroup);
+
   // creating fee type
-  const { mutate: mutateCreateFee, isLoading: isCreating } = useMutation({
-    mutationFn: createFee,
+  const { mutate: mutateCreateFeeGroup, isLoading: isCreating } = useMutation({
+    mutationFn: createFeeGroup,
     onSuccess: () => {
       toast.success("New fee type successfully created");
-      queryClient.invalidateQueries({ queryKey: ["fees"] });
+      queryClient.invalidateQueries({ queryKey: ["feeGroup"] });
       reset();
     },
     onError: (err) => toast.error(err.message),
@@ -38,17 +38,16 @@ function FeesType() {
 
   // deleting fee type
   const { isLoading: isDeleting, mutate: mutateDeleteFee } = useMutation({
-    mutationFn: deleteFee,
+    // mutationFn: deleteFee,
     onSuccess: () => {
       toast.success("Fee type successfully deleted");
-      queryClient.invalidateQueries({ queryKey: ["fees"] });
+      queryClient.invalidateQueries({ queryKey: ["feeGroup"] });
     },
     onError: (err) => toast.error(err.message),
   });
 
-  function onSubmit(feesList) {
-    mutateCreateFee(feesList);
-    console.log(feesList);
+  function onSubmit(data) {
+    console.log(data);
   }
 
   if (isLoading) return <Spinner />;
@@ -63,17 +62,24 @@ function FeesType() {
               <input
                 required
                 className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
-                id={"feeName"}
+                id={"feeGroup"}
                 type={"text"}
-                placeholder={"Enter Fees Type Name"}
-                {...register("feeName")}
+                placeholder={"Enter Fee Group Name"}
+                {...register("feeGroup")}
               />
             </FormRow>
-            <FormRow label={"Description"}>
+            <FormRow label={"Fee Type"}>
+              <select className={selectBorder} {...register("feeType")}>
+                {feeGroup.map((fee) => (
+                  <option key={fee.id}>{fee.feeName}</option>
+                ))}
+              </select>
+            </FormRow>
+            <FormRow label={"Fee Description"}>
               <textarea
                 className="border border-gray-400 px-5 py-3 text-gray-700  text-sm"
-                id={"feeDescription"}
-                {...register("feeDescription")}
+                id={"feeGroupDescription"}
+                {...register("feeGroupDescription")}
               />
             </FormRow>
             <div>
@@ -95,7 +101,7 @@ function FeesType() {
             </div>
             <div className="text-sm text-gray-700 font-bold">Actions</div>
           </div>
-          {fees.map((fee) => (
+          {feeGroup.map((fee) => (
             <div
               key={fee.id}
               className="grid grid-cols-3 justify-center items-center border-b-2 pb-4 mb-4"
@@ -119,4 +125,4 @@ function FeesType() {
   );
 }
 
-export default FeesType;
+export default FeeGroup;

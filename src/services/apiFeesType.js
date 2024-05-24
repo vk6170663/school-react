@@ -1,7 +1,7 @@
 import supabase from "./supabase";
 
 export async function getFeesType() {
-  const { data, error } = await supabase.from("fee_type").select("*");
+  const { data, error } = await supabase.from("feeType").select("*");
 
   if (error) {
     console.error(error);
@@ -11,8 +11,8 @@ export async function getFeesType() {
   return data;
 }
 
-export async function createFee(newFee) {
-  const { data, error } = await supabase.from("fee_type").insert([newFee]);
+export async function createFee(newFeeType) {
+  const { data, error } = await supabase.from("feeType").insert([newFeeType]);
 
   if (error) {
     console.error(error);
@@ -23,7 +23,7 @@ export async function createFee(newFee) {
 }
 
 export async function deleteFee(id) {
-  const { data, error } = await supabase.from("fee_type").delete().eq("id", id);
+  const { data, error } = await supabase.from("feeType").delete().eq("id", id);
 
   if (error) {
     console.error(error);

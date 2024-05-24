@@ -49,13 +49,13 @@ export default function Nav() {
           </Link>
           <ul className={dropLink}>
             <li>
-              <Link to="/add-fees" className={flexLink}>
-                <span>Add Fees</span>
+              <Link to="/fees-type" className={flexLink}>
+                <span>Fees Type</span>
               </Link>
             </li>
             <li>
-              <Link to="/fee-invoice" className={flexLink}>
-                <span>Fee Invoice</span>
+              <Link to="/fee-group" className={flexLink}>
+                <span>Fee Group</span>
               </Link>
             </li>
           </ul>

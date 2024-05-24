@@ -11,7 +11,7 @@ import AllStudent from "./pages/AllStudent";
 import NotFound from "./pages/NotFound";
 import RegistrationForm from "./pages/RegistrationForm";
 import FeesType from "./pages/FeesType";
-import FeeInvoice from "./pages/FeeInvoice";
+import FeeGroup from "./pages/FeeGroup";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -33,8 +33,8 @@ function App() {
             <Route path="add-student" element={<AddStudent />} />
             <Route path="all-student" element={<AllStudent />} />
             <Route path="registration-form" element={<RegistrationForm />} />
-            <Route path="add-fees" element={<FeesType />} />
-            <Route path="fee-invoice" element={<FeeInvoice />} />
+            <Route path="fees-type" element={<FeesType />} />
+            <Route path="fee-group" element={<FeeGroup />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
