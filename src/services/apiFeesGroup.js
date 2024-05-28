@@ -2,8 +2,8 @@ import supabase from "./supabase";
 
 export async function getFeesGroup() {
   const { data, error } = await supabase
-    .from("fee group")
-    .select("*", "feeType");
+    .from("feeGroup")
+    .select("* , feeType(*)");
 
   if (error) {
     console.error(error);

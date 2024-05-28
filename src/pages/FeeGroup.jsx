@@ -16,14 +16,12 @@ function FeeGroup() {
   // getting or displaying all fee type for fee group
   const {
     isLoading,
-    data: feeGroup,
+    data: feeGroups,
     error,
   } = useQuery({
     queryKey: ["feeGroup"],
     queryFn: getFeesType,
   });
-
-  console.log(feeGroup);
 
   // creating fee type
   const { mutate: mutateCreateFeeGroup, isLoading: isCreating } = useMutation({
@@ -48,6 +46,7 @@ function FeeGroup() {
 
   function onSubmit(data) {
     console.log(data);
+    mutateCreateFeeGroup(data);
   }
 
   if (isLoading) return <Spinner />;
@@ -70,7 +69,7 @@ function FeeGroup() {
             </FormRow>
             <FormRow label={"Fee Type"}>
               <select className={selectBorder} {...register("feeType")}>
-                {feeGroup.map((fee) => (
+                {feeGroups.map((fee) => (
                   <option key={fee.id}>{fee.feeName}</option>
                 ))}
               </select>
@@ -94,20 +93,22 @@ function FeeGroup() {
         </form>
 
         <div>
-          <div className="grid grid-cols-3 border-b-2 pb-2 mb-4">
+          <div className="grid grid-cols-4 border-b-2 pb-2 mb-4">
             <div className="text-sm text-gray-700 font-bold">Fee Name</div>
+            <div className="text-sm text-gray-700 font-bold">Fee Type</div>
             <div className="text-sm text-gray-700 font-bold">
               Fee Description
             </div>
             <div className="text-sm text-gray-700 font-bold">Actions</div>
           </div>
-          {feeGroup.map((fee) => (
+          {feeGroups.map((fee) => (
             <div
               key={fee.id}
               className="grid grid-cols-3 justify-center items-center border-b-2 pb-4 mb-4"
             >
-              <div>{fee.feeName}</div>
-              <div>{fee.feeDescription}</div>
+              <div>{fee.feeGroupName}</div>
+              <div>{fee.feeTypeName}</div>
+              <div>{fee.feeGroupDescription}</div>
               <div>
                 <button
                   onClick={() => mutateDeleteFee(fee.id)}
